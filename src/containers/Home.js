@@ -7,10 +7,12 @@ export default withRouteData(({ posts }) => (
     <br />
     All Posts:
     <ul>
-      {posts.map(post => (
-        <li key={post.slug}>
-          <Link to={`/post/${post.slug}/`}>{post.title}</Link>
-        </li>
+      {posts
+        .sort((a, b) => (new Date(b.date) - new Date(a.date)))
+        .map(post => (
+          <li key={post.slug}>
+            <Link to={`/post/${post.slug}/`}>{post.title}</Link>
+          </li>
       ))}
     </ul>
   </div>
