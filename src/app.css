@@ -1,12 +1,22 @@
 body {
   font-family: 'Raleway', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   margin: 0;
   padding: 0;
   line-height: 1.8;
   color: #6c6c6c;
 }
 
+p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  color: #6c6c6c;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #000;
+  font-family: 'Raleway', sans-serif;
+}
 a {
   text-decoration: none;
   color: #1f596d;
