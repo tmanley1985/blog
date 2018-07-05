@@ -81,7 +81,9 @@ Now here's the icing on top.
 
 Functions themselves along with an operator called *composition* and a very special function called the *identity function* (guess what that does!) form a monoid!
 
-The *compose* function in the example starts with a list of functions and reverses them (compose will run the functions in the list from right to left, pipe will run the functions from left to right). Since we know that the identity function just gives you back whatever you give it, it is a <a target="_blank" href="https://en.wikipedia.org/wiki/NOP">no-op</a> which means we can use it as a starting point in the same way we've done in the examples above.
+The *compose* function in the example starts with a list of functions and reverses them (compose will run the functions in the list from right to left, pipe will run the functions from left to right). Since we know that the identity function just gives you back whatever you give it, it is a <a target="_blank" href="https://en.wikipedia.org/wiki/NOP">no-op</a> which means we can use it as a starting point in the same way we've done in the examples above.  In this specific case, the order of the functions doesn't matter since addition is **commutative**.
+
+Composition is really a topic unto itself and admittedly requires a dedicated post.  We'll explore that at a later time.
 
 <br/>
 #### Just the beginning
