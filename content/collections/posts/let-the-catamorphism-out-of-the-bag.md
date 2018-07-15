@@ -1,5 +1,5 @@
 ---
-title: Let the Catamorphism of the Bag
+title: Let the Catamorphism Out of the Bag
 slug: let-the-catamorphism-out-of-the-bag
 date: '2018-07-14'
 tags:
