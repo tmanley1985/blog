@@ -66,8 +66,8 @@ So far we've motivated these concepts as it relates to folding and generating ar
 
 Like a great number of concepts in functional programming, both catamorphism and anamorphism have their roots in <a target="_blank" href="https://en.wikipedia.org/wiki/Category_theory">Category Theory</a>.
 
-I've purosefully strayed from any categoric underpinnings in this post, opting instead to build intuition through analogy. At some point however, analogy breaks down and calamity ensues. Intuition can carry you only so far.
+I've purposefully strayed from any categoric underpinnings in this post, opting instead to build intuition through analogy. At some point however, analogy breaks down and calamity ensues. Intuition can carry you only so far.
 
 If you're interested in jumping in the deep end, I suggest <a target="_blank" href="https://twitter.com/BartoszMilewski">Bartosz Milewski's</a> incredibly approachable <a target="_blank" href="https://www.youtube.com/watch?v=I8LbkfSSR58&list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_">Category Theory For Programmers</a>.
 
-As always, think deeply about the concept of folding and unfolding, then tinker. Don't just click into that other tab after reading this. I assure you that reddit will be there waiting for that pun you've been trying to think of for the past three hours.
+As always, think deeply about these concepts. Tinker with them. Don't just click into that other tab after reading this. I assure you that reddit will be there waiting for that pun you've been trying to think of for the past three hours.
