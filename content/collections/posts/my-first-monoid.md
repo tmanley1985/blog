@@ -63,6 +63,7 @@ Even after this initial aha moment I still felt bereft of any great revelation. 
 Let's look at a relevant, albeit naive, programming problem. How would we sum up a list of numbers?  Well there are multiple ways to skin a <a target="_blank" href="https://en.wikipedia.org/wiki/Catamorphism">catamorphism</a>.
 
 <div class="tiny">![sum a list of numbers](/images/reduce.png)
+<br/>
 *code samples were made simple by using [Carbon](https://carbon.now.sh/)*</div>
 
 In the example above, we sum (addition as the binary operator) the list of numbers (set of objects) and starting with 0 (the identity element). Since we know that zero added to any number equals that number, we can use it as the beginning operation.

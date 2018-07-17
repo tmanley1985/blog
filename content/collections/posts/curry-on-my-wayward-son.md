@@ -13,6 +13,7 @@ If you've landed here in search of recipes, you won't need any coconut milk for 
 What if I told you that you could call a function with only some of it's arguments?  I see the suspicion etching hard lines in your face. You're wondering why you would ever want do that. I'll get to that in a minute. At the moment, I want to focus on *what* you'll be doing.
 
 <div class="tiny">![curried add function](/images/curriedAdd.png)
+<br />
 *code samples were made simple by using [Carbon](https://carbon.now.sh/)*</div>
 
 Notice how the `sum` function takes two parameters *at the same time?*  When you call the function, you pass in the arguments at once.
