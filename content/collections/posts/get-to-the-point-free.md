@@ -5,13 +5,12 @@ date: '2018-07-16'
 tags:
 - functional programming
 - point free
-- eta conversion
 - tacit programming
 ---
 
-No one likes to repeat themselves.
+Whether it's in software, conversation or the fifth grade - no one likes to repeat themselves.
 
-Whether it's in software, conversation or the fifth grade, we admonish repetition in favor of abstraction.
+As software developers we're admonished against repetition and counseled instead to seek abstraction. Functional programmers are especially enamored with abstraction and have several techniques to help aid them achieve modularity.
 
 **Point free style** or **tacit programming** is a way of defining functions that doesn't explicitly identify it's parameters.
 
@@ -21,9 +20,9 @@ When I first read that definition I imagined something like this:
 
 `const greet = () => "Hello" + name`
 
-In that example, you would surely be asking yourself where the variable `name` came from. It wasn't a parameter of `greet` so it must be some global state or possibly even an undefined variable destined to crash your program.
+In that example, you would surely be asking yourself where the variable `name` came from. As `name` isn't a parameter of `greet` it must be some global state or possibly even an undefined variable destined to crash your program. The good news is that this sort of <a target="_blank" href="https://medium.com/@jamesjefferyuk/javascript-what-are-pure-functions-4d4d5392d49c">impure</a> code isn't an example of tacit programming.
 
-In reality the way we acheive **point free** code is that we define functions *in terms of* other functions. At some point down the rabbit hole there will be a function defining it's arguments. Let's look at some code.
+In reality the way we achieve point free code is that we define functions *in terms of* other functions. At some point down the rabbit hole there will be a function defining it's arguments. Let's look at some code.
 
 <div class="tiny">![point free style](/images/pointfree.png)
 <br/>
@@ -31,26 +30,32 @@ In reality the way we acheive **point free** code is that we define functions *i
 
 Let it never be said that I can't write a damned good multiply function. Damned good.
 
-I want to direct your attention to the `timesTwo` function. Notice that it takes a parameter `x` and just calls `multiply` that is partially applied with `2` with `x`. However, in this case the parameter `x` is unnecessary because `multiply(2)` returns a function that looks like: `y => 2 * y`.
+I want to direct your attention to the `timesTwo` function. Notice that it takes a parameter `x` and just calls `multiply(2)` with `x`. However, in this case the parameter `x` is unnecessary because `multiply(2)` returns a function that looks like: `y => 2 * y`.
 
-So we say that `timesTwo` identifies it's parameters.
+So we say that `timesTwo` *identifies* it's parameters.
 
-What about the `pointFreeTimesTwo` function? Well it defines itself by saying that it is equal to the aforementioned `multiply(2)` which we learned earlier returns a new function that accepts a number and returns that number multiplied by 2. By defining the function in this way, `pointFreeTimesTwo` doesn't have to introduce an intermediate layer of abstraction, thereby reducing redundancy.
+What about `pointFreeTimesTwo`? It doesn't explicitly tell you what it takes. However we said that `multiply(2)` returns a function, `y => 2 * y` and we define `pointFreeTimesTwo` to be equal to that. So we can deduce what it accepts because we know the function it is equivalent to.
 
-These functions are equivalent in the sense that they both will multiply some number by 2 to get a result, but one is more terse and and avoids unnecessary laziness.
+In terms of utility, `pointFreeTimesTwo` and `timesTwo` are equivalent. However, by defining `pointFreeTimesTwo` in this way we avoid an intermediate layer of abstraction, thereby reducing redundancy. As stated above, at some point there will be one or many functions that define their arguments. You can't have point free all the way down or no parameters would ever be defined!
 
 <br/>
-## Composing
+## Composing Right Along
 <hr/>
 
-When we leverage composition, we can create point free functions such as `getUserNames`.
+Tacit programming encourages the use of **composition**. Leveraging composition and point free style, we can derive functions such as `getUserNames`.
 
 <div class="tiny">![point free style composition](/images/compose-pointfree.png)
 <br/>
 *code samples were made simple by using [Carbon](https://carbon.now.sh/)*</div>
 
+Of course `userNames` accomplishes the same thing but the benefit of using composed functions like `getUserNames` we only have to iterate over the collection once!
+
 <br/>
-## Which is better?
+## Point Counterpoint
 <hr/>
 
-One argument against **point free style** is that it is unreadable. I would say that it *can* be unreadable but it isn't necessarily so. In fact, it can significantly reduce complexity by removing redundant code that obfuscates intention. If you have the benefit of working in a functional language with all the fixin's, this business of readability becomes even less of an issue with a robust type system and currying and composition being built in.
+One argument against point free style is that it is unreadable. It admittedly *can* be unreadable but it isn't necessarily so. Cursive can be unreadable, but when done correctly can be elegant. In fact, tacit programming can significantly reduce complexity by preventing redundant code that only serves to obfuscate intention. If you have the benefit of working in a functional language with all the fixins then readability becomes even less of an issue with currying and composition being built in as it reduces boilerplate.
+
+Point free style isn't a commandment. It's a paradigm that some people adopt early on or tend towards as they begin to lasso the chaos that comes from bloated code. If you're a fan of terse, modular code you certainly can't go wrong with point free style.
+
+
