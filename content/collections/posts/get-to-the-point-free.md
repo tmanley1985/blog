@@ -1,7 +1,7 @@
 ---
 title: Get To The Point Free
 slug: get-to-the-point-free
-date: '2018-07-16'
+date: '2018-07-23'
 tags:
 - functional programming
 - point free
